@@ -6,10 +6,40 @@ enum Complexity {
   Hard,
 }
 
+extension ComplexityText on Complexity {
+  String get text {
+    switch (this) {
+      case Complexity.Challenging:
+        return 'Challenging';
+      case Complexity.Hard:
+        return 'Hard';
+      case Complexity.Simple:
+        return 'Simple';
+      default:
+        return 'Unknown';
+    }
+  }
+}
+
 enum Affordability {
   Affordable,
   Pricey,
   Luxurious,
+}
+
+extension AffordabilityText on Affordability {
+  String get text {
+    switch (this) {
+      case Affordability.Affordable:
+        return 'Affordable';
+      case Affordability.Luxurious:
+        return 'Luxurious';
+      case Affordability.Pricey:
+        return 'Pricey';
+      default:
+        return 'Unknown';
+    }
+  }
 }
 
 class Meal {
